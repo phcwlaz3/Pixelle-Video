@@ -22,7 +22,8 @@ RUN if [ "$USE_CN_MIRROR" = "true" ]; then \
 # - ffmpeg: for video/audio processing
 # - fonts-noto-cjk: for CJK character support
 # - git: occasionally needed for some pip installs from VCS sources
-RUN apt-get update && apt-get install -y \
+# Note: added --no-install-recommends to keep the image leaner
+RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     ffmpeg \
     fonts-noto-cjk \
