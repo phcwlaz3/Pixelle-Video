@@ -90,6 +90,8 @@ python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
 ignore_missing_imports = true
+# also ignore errors in generated/vendored code I don't plan to type-check
+exclude = ["src/pixelle_video/_vendor", "src/pixelle_video/generated"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
